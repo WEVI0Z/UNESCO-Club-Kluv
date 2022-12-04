@@ -1,11 +1,11 @@
 <section class="nearest-events">
         <div class="nearest-events__upper-part">
             <h2>Близжайшие события:</h2>
-            <a href="#">Все события клуба</a>
+            <a href="index.php?eventspage=true">Все события клуба</a>
         </div>
         <ul class="nearest-events__list">
             <?php
-                $events = $data['events'];
+                $events = $data['args'];
                 
                 foreach($events as $key => $value) {
                     if($key < 3) {

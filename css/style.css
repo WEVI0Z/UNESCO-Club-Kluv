@@ -109,6 +109,11 @@ button {
     font-size: 32px;
 }
 
+.header__username {
+    font-size: 32px;
+    padding-right: 20px;
+}
+
 .header__slogan { 
     margin: 0;
     padding-top: 101px;
@@ -170,7 +175,6 @@ button {
 
 .last-news__upper-part {
     display: flex;
-    margin-top: 61px;
     justify-content: space-between;
     align-items: center;
 
@@ -202,7 +206,8 @@ button {
     padding: 62px 32px;
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content:left;
+    flex-wrap: wrap;
 }
 
 /* last_news_card PHP */
@@ -211,6 +216,12 @@ button {
     list-style-type: none;
     width: 398px;
     min-height: 601px;
+    margin-bottom: 20px;
+    margin-right: 37px;
+}
+
+.last-news__item:nth-child(3n) {
+    margin-right: 0px;
 }
 
 .last-news__item .card__picture {
@@ -295,7 +306,8 @@ button {
     padding: 70px 32px;
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    flex-wrap: wrap;
 }
 
 /* nearest_events_card php */
@@ -306,6 +318,12 @@ button {
     padding: 0;
     width: 400px;
     min-height: 600px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+}
+
+.nearest-events__card:nth-child(3n) {
+    margin-right: 0px;
 }
 
 .nearest-events__info-list {
@@ -395,7 +413,6 @@ button {
     min-height: 109px;
     position: relative;
     margin: auto;
-    margin-top: -40px;
 
     background-color: #817744;
 }
@@ -457,4 +474,110 @@ button {
     font-size: 16px;
     color: white;
     padding-right: 20px;
+}
+
+/* authorization popup */
+
+.authorization-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px 20px;
+
+    background-color: #817744;
+    border: 5px solid #605830;
+}
+
+.authorization-popup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authorization-popup input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    min-height: 35px;
+
+    font-size: 30px;
+
+    background-color: #908757;
+    color: white;
+}
+
+.authorization__button {
+
+    font-size: 30px;
+    
+    background-color: #908757;
+    color: white;
+    border-radius: 10px;
+}
+
+.authorization__button:hover {
+    background-color: #605830;
+}
+
+.authorization__close-button {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    background: none;
+    border: none;
+}
+
+.authorization__close-button::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    background-image: url('../img/close.png');
+    background-size: contain;
+}
+
+/* news-creation php */
+
+.news-creation {
+    width: 1336px;
+    margin: auto;
+}
+
+.news-creation * {
+    margin-bottom: 20px;
+}
+
+.news-creation form {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-creation input,
+.news-creation button,
+.news-creation textarea {
+    font-size: 30px;
+}
+
+/* functional */
+
+.hidden {
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
 }

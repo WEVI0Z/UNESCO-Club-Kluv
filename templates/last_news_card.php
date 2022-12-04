@@ -1,5 +1,5 @@
 <li class="last-news__item">
-    <img class="card__picture" src="<?=$data['img_path'] ?>" alt="Картинка новости">
+    <img width="398" height="457" class="card__picture" src="<?=$data['img_path'] ?>" alt="Картинка новости">
     <div class="card__descrpition">
         <a href="#" class="card__news-name">
             <?=$data['description']?>
