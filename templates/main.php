@@ -4,8 +4,9 @@
     <meta acharset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title><?='some'?></title>
 </head>
@@ -65,14 +66,14 @@
     <footer class="main-footer">
         <a class="footer__logo" href="#" aria-label="Логотип веб-сайта"></a>
         <ul class="footer__services">
-            <li class="services__item">
-                <a href="#"></a>
+            <li class="services__item insta">
+                <a href="#" aria-label="Инстаграмм"></a>
             </li>
-            <li class="services__item">
-                <a href="#"></a>
+            <li class="services__item vk">
+                <a href="#" aria-label="Вконтакте"></a>
             </li>
-            <li class="services__item">
-                <a href="#"></a>
+            <li class="services__item telegram">
+                <a href="#" aria-label="Телеграмм"></a>
             </li>
         </ul>
         <p class="footer__organization-name">Гродненский клуб ЮНЕСКО "Клюв"</p>

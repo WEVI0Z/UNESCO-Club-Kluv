@@ -3,7 +3,8 @@ body {
     padding: 0;
 
     font-family: 'Cuprum', sans-serif;
-    font-size: 32px;
+    font-size: 32px;   
+    font-weight: 700;
 }
 
 a {
@@ -22,8 +23,6 @@ button {
     width: 1336px;
     min-height: 513px;
     margin: auto;
-
-    background-color: #F4F1F1;
 }
 
 .header__upper-part {
@@ -202,8 +201,260 @@ button {
 .last-news__list {
     padding: 62px 32px;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
+
+/* last_news_card PHP */
 
 .last-news__item {
     list-style-type: none;
+    width: 398px;
+    min-height: 601px;
+}
+
+.last-news__item .card__picture {
+    margin: 0;
+    padding: 0;
+}
+
+.last-news__item .card__descrpition {
+    margin-top: -9px;
+    padding: 10.5px 8px;
+
+    background-color: #817744;
+}
+
+.last-news__item .card__news-name {
+    margin: 0;
+    width: 379px;
+
+    font-weight: 400;
+
+    color: white;
+    font-size: 28px;
+}
+
+.last-news__item .card__additional-info {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 20px;
+}
+
+.last-news__item p {
+    margin: 0;
+    margin-top: 10px;
+    padding: 2px 12px;
+
+    border-radius: 6px;
+    background-color: #908757;
+}
+
+/* nearest_events php */
+
+
+
+.nearest-events {
+    width: 1336px;
+    min-height: 878px;
+    
+    margin: auto;
+}
+
+.nearest-events__upper-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #817744;
+}
+
+
+.nearest-events__upper-part h2 {
+    padding: 31.5px 32px;
+    margin: 0;
+
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.nearest-events__upper-part a {
+    display: block;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: white;
+    padding: 9.5px 38.5px;
+    margin-right: 32px;
+
+    background-color: #605830;
+    border-radius: 7px;
+}
+
+.nearest-events__list {
+    padding: 70px 32px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* nearest_events_card php */
+
+.nearest-events__card {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    min-height: 600px;
+}
+
+.nearest-events__info-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-height: 400px;
+
+    color: white;
+    text-align: center;
+    font-weight: 400;
+
+    background-color: #817744;
+}
+
+.nearest-events__month {
+    padding: 6px;
+
+    font-size: 64px;
+}
+
+.nearest-events__day {
+    font-size: 128px;
+    line-height: 123px;  
+}
+
+.nearest-events__event-name {
+    padding: 0 19.5px;
+    margin-top: -8px;
+}
+
+.nearest-events__event-name a {
+    color: white;
+}
+
+.nearest-events__description {
+    padding: 9px 54.5px;
+    font-size: 24px;
+}
+
+.nearest-events__additional-info-list {
+    list-style-type: none;
+    min-height: 200px;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+    font-size: 36px;
+
+    border: 1px solid #817744;
+}
+
+.nearest-events__city {
+    padding: 14px 30px;
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: center;
+
+    font-size: 64px;
+}
+
+.nearest-events__city .map {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding-left: 56px;
+}
+
+.map::before {
+    content: "";
+    width: 56px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-image: url("../img/map.png");
+}
+
+/* footer php */
+
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1336px;
+    min-height: 109px;
+    position: relative;
+    margin: auto;
+    margin-top: -40px;
+
+    background-color: #817744;
+}
+
+.footer__logo::before {
+    content: "";
+    width: 70px;
+    height: 78px;
+    position: absolute;
+    top: 16px;
+    left: 15.02px;
+
+    background-image: url("../img/logo.png");
+    background-size: contain;
+}
+
+.footer__services {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 174px;
+    margin-bottom: 34px;
+    
+}
+
+.footer__services .services__item {
+    position: relative;
+    margin-left: 44px;
+}
+
+.footer__services .services__item a::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 31px;
+    top: 0;
+    left: 0;
+
+    background-size: contain;
+}
+
+.services__item.insta a::before {
+    background-image: url("../img/instagram.png");
+}
+
+.services__item.vk a::before {
+    background-image: url("../img/vk.png");
+}
+
+.services__item.telegram a::before {
+    background-image: url("../img/telegram.png");
+}
+
+.footer__services .services__item {
+    list-style-type: none;
+}
+
+.footer__organization-name {
+    font-size: 16px;
+    color: white;
+    padding-right: 20px;
 }

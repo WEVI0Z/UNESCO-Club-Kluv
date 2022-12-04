@@ -1,5 +1,5 @@
-<a class="nearest-events__card">
-    <ul class="nearest-events__list">
+<li class="nearest-events__card">
+    <ul class="nearest-events__info-list">
         <li class="nearest-events__month">
             <?php
                 $time = strtotime($data['date']);
@@ -39,7 +39,7 @@
             ?>
         </li>
         <li class="nearest-events__event-name">
-            <?=$data['name']?>
+            <a href="#"><?=$data['name']?></a>
         </li>
         <li class="nearest-events__description">
             <?=$data['slogan']?>
@@ -47,7 +47,9 @@
     </ul>
     <ul class="nearest-events__additional-info-list">
         <li class="nearest-events__city">
-            <?=$data['city']?>
+            <p class="map">
+                <?=$data['city']?>
+            </p>
         </li>
         <li class="nearest-events__address">
             <?=$data['adress']?>
@@ -56,4 +58,4 @@
             Начало - <?=$data['time']?>
         </li>
     </ul>
-</a>
+</li>
