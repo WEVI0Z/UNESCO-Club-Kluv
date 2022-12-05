@@ -36,7 +36,9 @@
             $date = substr($_POST['news_date'], 8, 2) . '.' . substr($_POST['news_date'], 5, 2) . '.' . substr($_POST['news_date'], 0, 4);
             $name = $_FILES['news_img']['tmp_name'];
             $path = $_FILES['news_img']['name'];
+
             move_uploaded_file($name, 'images/' . $path);
+
             $sql = "INSERT INTO news
                     SET img_path= 'images/" . $path .
                         "', description='" . $_POST['news_description'] .
@@ -65,7 +67,7 @@
             print(mysqli_error($con));
         }
 
-        if(!$_SESSION['logged'] && $_SERVER['REQUEST_METHOD'] == 'POST') {
+        if(!$_SESSION['logged'] && $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
             if(isset($_POST)) {
                 $sql = "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'";
                 $result = mysqli_query($con, $sql);
@@ -85,10 +87,43 @@
             }
         }
 
+        $error = false;
+
+        if(!$_SESSION['logged'] && $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reg_email'])) {
+            if(isset($_POST)) {
+                $sql = "SELECT * FROM users WHERE email = '" . $_POST['reg_email'] . "'";
+                $result = mysqli_query($con, $sql);
+                
+    
+                if(empty($result)) {
+                    print(1);
+                    $error = true;
+                } else {
+                    print(2);
+                    $_SESSION['logged'] = true;
+                    $_SESSION['email'] = $_POST['reg_email'];
+
+                    $sql = "INSERT INTO users SET email='" . $_POST['reg_email'] . "', password='" . $_POST['reg_password'] . "'";
+                    mysqli_query($con, $sql);
+                    print(mysqli_error($con));
+                }
+            }
+        }
+
         if($_GET['exit'] == true) {
             $_SESSION['logged'] = false;
             $_SESSION['email'] = '';
             $_SESSION['admin'] = false;
+        }
+
+        if(isset($_GET['delete_event'])) {
+            $sql = "DELETE FROM events WHERE id='" . $_GET['index'] . "'";
+            mysqli_query($con, $sql);
+        }
+
+        if(isset($_GET['delete_news'])) {
+            $sql = "DELETE FROM news WHERE id='" . $_GET['index'] . "'";
+            mysqli_query($con, $sql);
         }
         
         if($_GET['admin'] and $_SESSION['admin']) {

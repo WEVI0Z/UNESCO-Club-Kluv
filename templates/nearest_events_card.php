@@ -57,5 +57,12 @@
         <li class="time">
             Начало - <?=$data['time']?>
         </li>
+        <?php if ($_SESSION['admin']) {
+                $path = '"index.php?delete_event=true&index=' . $data['id'] . '"';
+            ?>
+            <a href=<?=$path?>>
+                Удалить событие
+            </a>
+        <?php } ?>
     </ul>
 </li>

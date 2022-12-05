@@ -14,6 +14,7 @@
                         'city' => $value['city'],
                         'adress' => $value['adress'],
                         'time' => $value['time'],
+                        'id' => $value['id']
                     ]);
                 }
             ?>

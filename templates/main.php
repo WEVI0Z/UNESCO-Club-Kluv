@@ -17,7 +17,7 @@
     <header class="main-header">
         <div class="header__upper-part">
             <h1 class="header__name">
-                <a href="#">Клуб ЮНЕСКО "КЛЮВ"</a>
+                <a href="index.php">Клуб ЮНЕСКО "КЛЮВ"</a>
             </h1>
             <?php if(!$_SESSION['logged']) {?>
             <ul class="header__authorization-list">
@@ -30,8 +30,14 @@
             </ul>
             <?php } else {?>
             <ul class="header__authorization-list">
-                    <a href="index.php?admin=true"><?=$_SESSION['email']?></a>
-                    <a href="index.php?exit=true">Выйти</a>
+                    <ul class="header__authorization-list">
+                        <li class="authorization-item">
+                            <a href="index.php?admin=true"><?=$_SESSION['email']?></a>
+                        </li>
+                        <li class="authorization-item">
+                            <a href="index.php?exit=true">Выйти</a>
+                        </li>
+                    </ul>
             </ul>
             <?php }?>
         </div>
@@ -88,6 +94,28 @@
             <input class="authorization__password-input" name="password" required type="password" maxlength="255" id="password">
             <button class="authorization__button" type="submit">Войти</button>
             <button class="authorization__close-button" aria-label="Закрыть окно"></button>
+            <?php if($error) { ?>
+                <div class=authorization__error">
+                    Что-то пошло не так!
+                </div>
+            <?} ?>
+        </form>
+    </section>
+    <section class="registration-popup hidden">
+        <form action="index.php" method="post">
+            <label class="registration__email-label" for="reg_email">Введите почту:</label>
+            <input class="registration__email-input" name="reg_email" maxlength="255" required type="email" id="reg_email">
+            
+            <label class="registration__password-label" for="reg_password">Введите пароль:</label>
+            <input class="registration__password-input" name="reg_password" required type="password" maxlength="255" id="reg_password">
+            
+            <button class="registration__button" type="submit">Зарегистрироватся</button>
+            <button class="registration__close-button" aria-label="Закрыть окно"></button>
+            <?php if($error) { ?>
+                <div class=authorization__error">
+                    Что-то пошло не так!
+                </div>
+            <?} ?>
         </form>
     </section>
     <script type="text/javascript" src="../js/script.js"></script> 

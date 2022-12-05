@@ -12,5 +12,12 @@
                 <?=$data['date']?>
             </p>
         </div>
+        <?php if ($_SESSION['admin']) {
+                $path = '"index.php?delete_news=true&index=' . $data['id'] . '"';
+            ?>
+            <a href=<?=$path?>>
+                Удалить событие
+            </a>
+        <?php } ?>
     </div>
 </li>

@@ -9,7 +9,8 @@
                         'img_path' => $value['img_path'],
                         'description' => $value['description'],
                         'place' => $value['place'],
-                        'date' => $value['date']
+                        'date' => $value['date'],
+                        'id' => $value['id']
                     ]);
             }
         ?>  
