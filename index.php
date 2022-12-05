@@ -1,7 +1,6 @@
 <?php
     include_once("functions.php");
-
-    $con = mysqli_connect('localhost', 'root', '', 'cluv');
+    include_once("data.php");
 
     if (!$con) {
         print("Ошибка подключения: " . mysqli_connect_error());
